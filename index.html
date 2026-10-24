@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#dce9f8">
+  <meta name="description" content="A little corner made for Jose.">
+  <title>Hieldt Rodrick</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="phone" aria-label="Hieldt Rodrick chat">
+    <header class="topbar">
+      <div class="avatar-wrap">
+        <img class="avatar" src="assets/rod.jpg" alt="Hiro's profile photo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+        <span class="avatar-fallback" aria-hidden="true">H.</span>
+      </div>
+      <div class="identity">
+        <h1>Hiro.</h1>
+        <p><span class="status-dot"></span> always here to listen</p>
+      </div>
+      <button class="menu-button" id="clearChat" type="button" aria-label="Clear chat" title="Clear chat">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <section class="chat" id="chat" aria-live="polite" aria-label="Chat messages">
+      <div class="date-chip" id="dateChip"></div>
+      <div class="welcome-note">a little place for you to talk, whenever you need.</div>
+    </section>
+
+    <div class="typing-row" id="typingRow" hidden>
+      <div class="typing-bubble"><i></i><i></i><i></i></div>
+      <span>Hiro. is typing</span>
+    </div>
+
+    <form class="composer" id="chatForm" autocomplete="off">
+      <label class="sr-only" for="messageInput">Message Hiro</label>
+      <input id="messageInput" name="message" maxlength="1000" placeholder="Message..." required>
+      <button id="sendButton" type="submit" aria-label="Send message">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-4 16-4-6-8-2Z"></path><path d="m12 14 8-10"></path></svg>
+      </button>
+    </form>
+    <footer class="footnote">made with care, just for you</footer>
+  </main>
+  <dialog id="clearDialog" class="confirm-dialog">
+    <form method="dialog">
+      <h2>Clear this chat?</h2>
+      <p>All messages saved in this browser will be removed. This can't be undone.</p>
+      <div class="dialog-actions">
+        <button value="cancel" class="cancel-button">Cancel</button>
+        <button value="clear" class="danger-button" id="confirmClear">Clear chat</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="responses.js"></script>
+  <script src="bot.js"></script>
+</body>
+</html>
